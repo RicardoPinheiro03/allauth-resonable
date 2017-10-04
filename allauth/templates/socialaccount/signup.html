@@ -2,21 +2,59 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock %}
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ETAPA FINAL DO REGISTO.</title>
+<link rel="shortcut icon" href="{% static "landingpage/img/favicon.ico" %}">
 
+
+<!-- Bootstrap and fonts -->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+</head>
+
+<style>
+    
+#submit-id-submit {
+	height: 100px;
+	width: 135px;
+	background: transparent;
+	font-size: 75px;
+	font-family: 'PT Mono', cursive;
+	font-color: #000000;
+	border: 3px solid #EC297B;
+	border-radius: 0;
+	display:table-cell;
+}
+
+#emailfield {
+	color: white;
+	background-color: #000000;
+	height: 50px;
+	width: 450px;
+	font-color: #FFFFFF;
+	margin-left: 10px;
+	border-radius: 0;
+}
+</style>
 {% block content %}
-    <h1>{% trans "Sign Up" %}</h1>
+    <h1 style="font-family:'PT Mono', cursive;">{% trans "Registo" %}</h1>
 
-<p>{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}You are about to use your {{provider_name}} account to login to
-{{site_name}}. As a final step, please complete the following form:{% endblocktrans %}</p>
+<p style="font-family:'PT Mono', cursive;">só falta um passo. introduz o teu email em baixo.</p>
 
 <form class="signup" id="signup_form" method="post" action="{% url 'socialaccount_signup' %}">
   {% csrf_token %}
   {{ form.as_p }}
   {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" id="emailfield" />
   {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+  <div class="form-group col-xs-5 col-sm-6 col-md-8 col-lg-12" id="group" style="margin-top:32px;">
+					<input type="submit" name="submit" value="GO!"  id="submit-id-submit">
+</div>
 </form>
 
 {% endblock %}
