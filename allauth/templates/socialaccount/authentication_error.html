@@ -1,11 +1,29 @@
-{% extends "socialaccount/base.html" %}
+{% include 'account/logo_header.html' %}
+{% include 'account/footer.html' %}
 
 {% load i18n %}
+{% load staticfiles %}
 
-{% block head_title %}{% trans "Social Network Login Failure" %}{% endblock %}
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'landingpage/css/error.css' %}">
+{% endblock stylesheet %}
 
-{% block content %}
-<h1>{% trans "Social Network Login Failure" %}</h1>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{% static "landingpage/img/favicon.ico" %}">
+<title>ERRO.</title>
+<!-- Bootstrap and fonts -->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+</head>
 
-<p>{% trans "An error occurred while attempting to login via your social network account." %}</p>
-{% endblock %}
+{% block display_content %}
+	<div class="container col-xs-5 col-sm-6 col-md-8 col-lg-12 col-centered" style="margin-top:300px;">
+		<p id="text">Algo correu mal. Esqueceste-te de algo.</p>
+		<p id="text-2">[ volta atrás ]</p>
+	</div>
+{% endblock display_content %}
