@@ -19,13 +19,12 @@
 </head>
 
 
+<body>
 
-{% block content %}
-
-<h1 style="font-family: "PT Mono", cursive;">{% trans "Login Cancelado" %}</h1>
+<h1 style="font-family: "PT Mono", cursive;">Login Cancelado</h1>
 
 {% url 'account_login' as login_url %}
 
-<p style="font-family: "PT Mono", cursive;">{% blocktrans %}Decidiste cancelar o login. Se isto foi um erro, por favor, segue para  <a href="{{login_url}}">logares.</a>{% endblocktrans %}</p>
+<p style="font-family: "PT Mono", cursive;">Decidiste cancelar o login. Se isto foi um erro, por favor, segue para  <a href="{{login_url}}">logares.</a></p>
 
-{% endblock %}
+</body>
