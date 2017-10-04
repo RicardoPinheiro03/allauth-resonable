@@ -1,15 +1,32 @@
 {% extends "socialaccount/base.html" %}
+{% include 'account/logo_header.html' %}
+{% include 'account/footer.html' %}
 
-{% load i18n %}
+{% load i18n staticfiles  %}
 
-{% block head_title %}{% trans "Login Cancelled" %}{% endblock %}
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{% static "landingpage/img/favicon.ico" %}">
+
+<!-- Bootstrap and fonts -->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+</head>
+
+{% block head_title %}ERRO NO LOGIN.{% endblock %}
 
 {% block content %}
 
-<h1>{% trans "Login Cancelled" %}</h1>
+<h1 style="">{% trans "Login Cancelado" %}</h1>
 
 {% url 'account_login' as login_url %}
 
-<p>{% blocktrans %}You decided to cancel logging in to our site using one of your existing accounts. If this was a mistake, please proceed to <a href="{{login_url}}">sign in</a>.{% endblocktrans %}</p>
+<p style="font-family: "PT Mono", cursive;">{% blocktrans %}Decidiste cancelar o login. Se isto foi um erro, por favor, segue para  a href="{{login_url}}">logares.</a>{% endblocktrans %}</p>
 
 {% endblock %}
