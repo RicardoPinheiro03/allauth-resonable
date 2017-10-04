@@ -41,8 +41,13 @@
 	margin-left: 10px;
 	border-radius: 0;
 }
+	
+body {
+	font-family: 'PT Mono', cursive;
+}
 </style>
-{% block content %}
+<body>
+	<div class="container">
     <h1 style="font-family:'PT Mono', cursive;">{% trans "Registo" %}</h1>
 
 <p style="font-family:'PT Mono', cursive;">só falta um passo. introduz o teu email em baixo.</p>
@@ -56,6 +61,6 @@
   <div class="form-group col-xs-5 col-sm-6 col-md-8 col-lg-12" id="group" style="margin-top:32px;">
 					<input type="submit" name="submit" value="GO!"  id="submit-id-submit">
 </div>
+	</div>
 </form>
-
-{% endblock %}
+</body>
